@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Layanan fotografi profesional Lumina Studio — Wedding, Prewedding, Graduation, Event, Product, Cinematic Video." />
+  <title>Services — Lumina Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .page-hero {
+      height: 55vh; min-height: 380px;
+      display: flex; align-items: flex-end;
+      padding: 5% 5% 4rem;
+      background: var(--black-deep);
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content:''; position:absolute; inset:0;
+      background: url('https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1600&q=60') center/cover;
+      opacity:.15;
+    }
+    .page-hero-content { position:relative; z-index:1; }
+
+    /* Pricing cards */
+    .pricing-section { padding: 80px 5%; background: var(--black-soft); }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1px;
+      background: var(--dark-2);
+      margin-top: 3rem;
+    }
+    .pricing-card {
+      background: var(--black-soft);
+      padding: 3rem 2.5rem;
+      position: relative;
+      transition: background var(--transition);
+    }
+    .pricing-card.featured {
+      background: var(--dark-1);
+    }
+    .pricing-card.featured::before {
+      content: 'POPULAR';
+      position: absolute;
+      top: 0; right: 2.5rem;
+      background: var(--gold);
+      color: var(--black);
+      font-family: var(--font-ui);
+      font-size: 0.55rem;
+      letter-spacing: 0.25em;
+      padding: 0.3rem 0.8rem;
+      font-weight: 500;
+    }
+    .pricing-card:hover { background: var(--dark-1); }
+    .pricing-name {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: .5rem;
+    }
+    .pricing-price {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1;
+      margin: 1.2rem 0;
+    }
+    .pricing-price small {
+      font-size: 1rem;
+      color: var(--silver);
+      font-family: var(--font-ui);
+      font-weight: 300;
+    }
+    .pricing-desc {
+      font-family: var(--font-body);
+      font-size: .95rem;
+      color: var(--silver);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    .pricing-features {
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+      margin-bottom: 2rem;
+    }
+    .pricing-features li {
+      font-family: var(--font-body);
+      font-size: .95rem;
+      color: var(--white-dim);
+      display: flex;
+      align-items: flex-start;
+      gap: .7rem;
+    }
+    .pricing-features li::before {
+      content: '✦';
+      color: var(--gold);
+      font-size: .6rem;
+      margin-top: .35rem;
+      flex-shrink: 0;
+    }
+
+    /* Process section */
+    .process-section { padding: 80px 5%; background: var(--black); }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+    .process-step { text-align: center; }
+    .process-num {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--dark-3);
+      line-height: 1;
+      margin-bottom: .5rem;
+    }
+    .process-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: .5rem;
+    }
+    .process-desc {
+      font-family: var(--font-body);
+      font-size: .95rem;
+      color: var(--silver);
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-follower"></div>
+<div id="loader"><div class="loader-logo">LUMINA<span>.</span></div><div class="loader-bar-wrap"><div class="loader-bar"></div></div><p class="loader-text">Services</p></div>
+
+<a id="wa-float" href="https://wa.me/6281234567890" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">LUMINA<span>.</span></a>
+  <ul class="nav-menu">
+    <li><a href="index.html" class="nav-link">Home</a></li>
+    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+    <li><a href="services.html" class="nav-link active">Services</a></li>
+    <li><a href="about.html" class="nav-link">About</a></li>
+    <li><a href="contact.html" class="nav-link nav-cta">Book Session</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-mobile">
+  <a href="index.html" class="nav-link">Home</a>
+  <a href="portfolio.html" class="nav-link">Portfolio</a>
+  <a href="services.html" class="nav-link">Services</a>
+  <a href="about.html" class="nav-link">About</a>
+  <a href="contact.html" class="nav-link">Contact</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <span class="section-eyebrow">What We Offer</span>
+    <h1 class="section-title">Our <em>Services</em></h1>
+  </div>
+</div>
+
+<!-- Services Grid -->
+<section id="services">
+  <div class="text-center reveal">
+    <span class="section-eyebrow">Expertise</span>
+    <h2 class="section-title">Photography <em>Services</em></h2>
+    <div class="section-line" style="margin:1.5rem auto;"></div>
+    <p class="section-desc" style="margin:0 auto;">Setiap layanan kami dirancang untuk menghasilkan karya visual yang timeless.</p>
+  </div>
+
+  <div class="services-grid">
+    <article class="service-card reveal reveal-delay-1">
+      <span class="service-num">01</span>
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+      <h3 class="service-title">Wedding Photography</h3>
+      <p class="service-desc">Abadikan hari terbahagia dengan narasi visual yang timeless. Full day coverage dari persiapan hingga resepsi.</p>
+      <div class="service-price">Mulai dari <strong>Rp 3.500.000</strong></div>
+      <a href="contact.html" class="service-cta">Book Now →</a>
+    </article>
+    <article class="service-card reveal reveal-delay-2">
+      <span class="service-num">02</span>
+      <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+      <h3 class="service-title">Prewedding</h3>
+      <p class="service-desc">Sesi foto romantis dengan konsep storytelling sinematik. Indoor, outdoor, atau destinasi pilihan Anda.</p>
+      <div class="service-price">Mulai dari <strong>Rp 1.800.000</strong></div>
+      <a href="contact.html" class="service-cta">Book Now →</a>
+    </article>
+    <article class="service-card reveal reveal-delay-3">
+      <span class="service-num">03</span>
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+      <h3 class="service-title">Graduation</h3>
+      <p class="service-desc">Rayakan pencapaian luar biasa dengan foto wisuda yang elegan. Studio atau outdoor, semua tersedia.</p>
+      <div class="service-price">Mulai dari <strong>Rp 800.000</strong></div>
+      <a href="contact.html" class="service-cta">Book Now →</a>
+    </article>
+    <article class="service-card reveal reveal-delay-1">
+      <span class="service-num">04</span>
+      <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+      <h3 class="service-title">Event Documentation</h3>
+      <p class="service-desc">Dokumentasi profesional untuk corporate event, seminar, konferensi, dan acara budaya.</p>
+      <div class="service-price">Mulai dari <strong>Rp 2.500.000</strong></div>
+      <a href="contact.html" class="service-cta">Book Now →</a>
+    </article>
+    <article class="service-card reveal reveal-delay-2">
+      <span class="service-num">05</span>
+      <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+      <h3 class="service-title">Product Photography</h3>
+      <p class="service-desc">Visual produk premium yang meningkatkan nilai merek dan mendorong konversi penjualan.</p>
+      <div class="service-price">Mulai dari <strong>Rp 1.200.000</strong></div>
+      <a href="contact.html" class="service-cta">Book Now →</a>
+    </article>
+    <article class="service-card reveal reveal-delay-3">
+      <span class="service-num">06</span>
+      <div class="service-icon"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+      <h3 class="service-title">Cinematic Video</h3>
+      <p class="service-desc">Film pendek sinematik untuk pernikahan, brand story, profil perusahaan, dan dokumenter pribadi.</p>
+      <div class="service-price">Mulai dari <strong>Rp 5.000.000</strong></div>
+      <a href="contact.html" class="service-cta">Book Now →</a>
+    </article>
+  </div>
+</section>
+
+<!-- Pricing Section -->
+<section class="pricing-section">
+  <div class="text-center reveal">
+    <span class="section-eyebrow">Transparent Pricing</span>
+    <h2 class="section-title">Wedding <em>Packages</em></h2>
+    <div class="section-line" style="margin:1.5rem auto;"></div>
+  </div>
+  <div class="pricing-grid">
+    <div class="pricing-card reveal reveal-delay-1">
+      <p class="pricing-name">Essential</p>
+      <div class="pricing-price">3,5 Jt <small>/ sesi</small></div>
+      <p class="pricing-desc">Ideal untuk pernikahan sederhana namun tetap berkesan.</p>
+      <ul class="pricing-features">
+        <li>8 jam coverage</li>
+        <li>1 fotografer profesional</li>
+        <li>300+ foto edited</li>
+        <li>Online gallery private</li>
+        <li>Delivery 2 minggu</li>
+      </ul>
+      <a href="contact.html" class="btn-outline" style="display:inline-block;">Book Now</a>
+    </div>
+    <div class="pricing-card featured reveal reveal-delay-2">
+      <p class="pricing-name">Premium</p>
+      <div class="pricing-price">6,5 Jt <small>/ sesi</small></div>
+      <p class="pricing-desc">Paket lengkap untuk hari pernikahan yang sempurna.</p>
+      <ul class="pricing-features">
+        <li>Full day (12 jam)</li>
+        <li>2 fotografer + 1 videografer</li>
+        <li>600+ foto edited</li>
+        <li>Highlight video 3-5 menit</li>
+        <li>Foto album premium</li>
+        <li>Delivery 3 minggu</li>
+      </ul>
+      <a href="contact.html" class="btn-primary" style="display:inline-block;"><span>Book Now</span></a>
+    </div>
+    <div class="pricing-card reveal reveal-delay-3">
+      <p class="pricing-name">Luxury</p>
+      <div class="pricing-price">12 Jt <small>/ sesi</small></div>
+      <p class="pricing-desc">Pengalaman fotografi paling eksklusif dan komprehensif.</p>
+      <ul class="pricing-features">
+        <li>2 hari (akad + resepsi)</li>
+        <li>3 fotografer + drone</li>
+        <li>1000+ foto edited</li>
+        <li>Cinematic film 10+ menit</li>
+        <li>Premium photobook</li>
+        <li>Pre-wedding session</li>
+        <li>Delivery 4 minggu</li>
+      </ul>
+      <a href="contact.html" class="btn-outline" style="display:inline-block;">Book Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process-section">
+  <div class="text-center reveal">
+    <span class="section-eyebrow">How It Works</span>
+    <h2 class="section-title">Simple <em>Process</em></h2>
+  </div>
+  <div class="process-steps">
+    <div class="process-step reveal reveal-delay-1">
+      <div class="process-num">01</div>
+      <h3 class="process-title">Konsultasi</h3>
+      <p class="process-desc">Hubungi kami via WhatsApp untuk diskusi konsep, tanggal, dan kebutuhan Anda.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-2">
+      <div class="process-num">02</div>
+      <h3 class="process-title">Booking</h3>
+      <p class="process-desc">Konfirmasi tanggal dengan DP 30%. Tanggal Anda aman dan terjamin.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-3">
+      <div class="process-num">03</div>
+      <h3 class="process-title">Sesi Foto</h3>
+      <p class="process-desc">Hari H — tim kami hadir profesional dan siap mengabadikan setiap momen.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-4">
+      <div class="process-num">04</div>
+      <h3 class="process-title">Delivery</h3>
+      <p class="process-desc">Foto dan video terkirim ke galeri private Anda sesuai jadwal yang disepakati.</p>
+    </div>
+  </div>
+</section>
+
+<section id="cta-section">
+  <span class="cta-eyebrow">Ready?</span>
+  <h2 class="cta-title reveal">Book Your <em>Session</em></h2>
+  <p class="cta-desc reveal">Hubungi kami sekarang dan mari wujudkan visi Anda.</p>
+  <div class="cta-btns reveal">
+    <a href="https://wa.me/6281234567890" class="btn-whatsapp" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Kami
+    </a>
+    <a href="contact.html" class="btn-outline">Lihat Kontak</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div><a href="index.html" class="footer-logo">LUMINA<span>.</span></a><p class="footer-tagline">Cinematic photography studio.</p></div>
+    <div><p class="footer-col-title">Pages</p><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><p class="footer-col-title">Services</p><ul class="footer-links"><li><a href="services.html">Wedding</a></li><li><a href="services.html">Prewedding</a></li><li><a href="services.html">Event</a></li><li><a href="services.html">Commercial</a></li></ul></div>
+    <div><p class="footer-col-title">Connect</p><ul class="footer-links"><li><a href="https://wa.me/6281234567890">WhatsApp</a></li><li><a href="https://instagram.com/luminastudio">Instagram</a></li><li><a href="mailto:hello@luminastudio.id">Email</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2024 Lumina Studio. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

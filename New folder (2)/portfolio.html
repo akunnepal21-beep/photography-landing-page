@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio Lumina Studio — Galeri fotografi profesional: Wedding, Portrait, Event, Street, Commercial." />
+  <title>Portfolio — Lumina Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .page-hero {
+      height: 55vh;
+      min-height: 400px;
+      display: flex;
+      align-items: flex-end;
+      padding: 5% 5% 4rem;
+      background: linear-gradient(to bottom, var(--black-deep) 0%, var(--black-soft) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        url('https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1600&q=70') center/cover;
+      opacity: 0.2;
+    }
+    .page-hero-content { position: relative; z-index: 1; }
+    .portfolio-full { padding: 5rem 5%; background: var(--black); }
+  </style>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-follower"></div>
+<div id="loader"><div class="loader-logo">LUMINA<span>.</span></div><div class="loader-bar-wrap"><div class="loader-bar"></div></div><p class="loader-text">Portfolio</p></div>
+
+<a id="wa-float" href="https://wa.me/6281234567890" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">LUMINA<span>.</span></a>
+  <ul class="nav-menu">
+    <li><a href="index.html" class="nav-link">Home</a></li>
+    <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
+    <li><a href="services.html" class="nav-link">Services</a></li>
+    <li><a href="about.html" class="nav-link">About</a></li>
+    <li><a href="contact.html" class="nav-link nav-cta">Book Session</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-mobile">
+  <a href="index.html" class="nav-link">Home</a>
+  <a href="portfolio.html" class="nav-link">Portfolio</a>
+  <a href="services.html" class="nav-link">Services</a>
+  <a href="about.html" class="nav-link">About</a>
+  <a href="contact.html" class="nav-link">Contact</a>
+</div>
+
+<!-- Page Hero -->
+<div class="page-hero">
+  <div class="page-hero-content">
+    <span class="section-eyebrow">Our Work</span>
+    <h1 class="section-title" style="max-width:600px;">Selected <em>Portfolio</em></h1>
+  </div>
+</div>
+
+<!-- Portfolio Full -->
+<section class="portfolio-full">
+  <div class="portfolio-filters reveal" role="group" style="margin-bottom:3rem; display:flex; gap:.5rem; flex-wrap:wrap;">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="wedding">Wedding</button>
+    <button class="filter-btn" data-filter="portrait">Portrait</button>
+    <button class="filter-btn" data-filter="event">Event</button>
+    <button class="filter-btn" data-filter="street">Street</button>
+    <button class="filter-btn" data-filter="nature">Nature</button>
+    <button class="filter-btn" data-filter="commercial">Commercial</button>
+  </div>
+
+  <div class="portfolio-grid">
+    <div class="portfolio-item" data-cat="wedding" data-caption="Wedding — Andi & Sari">
+      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=700&q=80" alt="Wedding" loading="lazy"/>
+      <div class="portfolio-overlay"><span class="portfolio-cat">Wedding</span><span class="portfolio-name">Andi & Sari</span></div>
+    </div>
+    <div class="portfolio-item" data-cat="portrait" data-caption="Portrait — Elara">
+      <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=700&q=80" alt="Portrait" loading="lazy"/>
+      <div class="portfolio-overlay"><span class="portfolio-cat">Portrait</span><span class="portfolio-name">Elara</span></div>
+    </div>
+    <div class="portfolio-item" data-cat="nature" data-caption="Nature — Golden Hour">
+      <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=700&q=80" alt="Nature" loading="lazy"/>
+      <div class="portfolio-overlay"><span class="portfolio-cat">Nature</span><span class="portfolio-name">Golden Hour</span></div>
+    </div>
+    <div class="portfolio-item" data-cat="commercial" data-caption="Commercial — Luxury Timepiece">
+      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=700&q=80" alt="Commercial" loading="lazy"/>
+      <div class="portfolio-overlay"><span class="portfolio-cat">Commercial</span><span class="portfolio-name">Luxury Timepiece</span></div>
+    </div>
+    <div class="portfolio-item" data-cat="wedding" data-caption="Wedding — Budi & Rina">
+      <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=700&q=80" alt="Wedding" loading="lazy"/>
+      <div class="portfolio-overlay"><span class="portfolio-cat">Wedding</span><span class="portfolio-name">Budi & Rina</span></div>
+    </div>
+    <div class="portfolio-item" data-cat="street" data-caption="Street — Urban Silence">
+      <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=700&q=80" alt="Street" loading="lazy"/>
+      <div class="portfolio-overlay"><span class="portfolio-cat">Street</span><span class="portfolio-name">Urban Silence</span></div>
+    </div>
+    <div class="portfolio-item" data-cat="event" data-caption="Event — Annual Gala 2024">
+      <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=700&q=80" alt="Event" loading="lazy"/>
+      <div class="portfolio-overlay"><span class="portfolio-cat">Event</span><span class="portfolio-name">Annual Gala 2024</span></div>
+    </div>
+    <div class="portfolio-item" data-cat="portrait" data-caption="Portrait — Reza M.">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&q=80" alt="Portrait" loading="lazy"/>
+      <div class="portfolio-overlay"><span class="portfolio-cat">Portrait</span><span class="portfolio-name">Reza M.</span></div>
+    </div>
+    <div class="portfolio-item" data-cat="wedding" data-caption="Prewedding — Pantai Bromo">
+      <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=700&q=80" alt="Wedding" loading="lazy"/>
+      <div class="portfolio-overlay"><span class="portfolio-cat">Wedding</span><span class="portfolio-name">Prewedding Pantai</span></div>
+    </div>
+    <div class="portfolio-item" data-cat="commercial" data-caption="Commercial — Fashion Editorial">
+      <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=700&q=80" alt="Commercial" loading="lazy"/>
+      <div class="portfolio-overlay"><span class="portfolio-cat">Commercial</span><span class="portfolio-name">Fashion Editorial</span></div>
+    </div>
+    <div class="portfolio-item" data-cat="nature" data-caption="Nature — Mist Valley">
+      <img src="https://images.unsplash.com/photo-1516912481808-3406841bd33c?w=700&q=80" alt="Nature" loading="lazy"/>
+      <div class="portfolio-overlay"><span class="portfolio-cat">Nature</span><span class="portfolio-name">Mist Valley</span></div>
+    </div>
+    <div class="portfolio-item" data-cat="event" data-caption="Event — Corporate Summit">
+      <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=700&q=80" alt="Event" loading="lazy"/>
+      <div class="portfolio-overlay"><span class="portfolio-cat">Event</span><span class="portfolio-name">Corporate Summit</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="modal" role="dialog" aria-modal="true">
+  <div class="modal-inner">
+    <button class="modal-close">✕ Close</button>
+    <img id="modal-img" src="" alt="" />
+    <div class="modal-caption"><p id="modal-caption"></p></div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section id="cta-section">
+  <span class="cta-eyebrow">Like What You See?</span>
+  <h2 class="cta-title reveal">Book Your <em>Session</em></h2>
+  <p class="cta-desc reveal">Hubungi kami dan mari ciptakan karya terbaik bersama.</p>
+  <div class="cta-btns reveal">
+    <a href="https://wa.me/6281234567890" class="btn-whatsapp" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Hubungi Kami
+    </a>
+    <a href="contact.html" class="btn-outline">Lihat Paket</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div><a href="index.html" class="footer-logo">LUMINA<span>.</span></a><p class="footer-tagline">Cinematic photography studio.</p></div>
+    <div><p class="footer-col-title">Pages</p><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><p class="footer-col-title">Services</p><ul class="footer-links"><li><a href="services.html">Wedding</a></li><li><a href="services.html">Prewedding</a></li><li><a href="services.html">Event</a></li><li><a href="services.html">Commercial</a></li></ul></div>
+    <div><p class="footer-col-title">Connect</p><ul class="footer-links"><li><a href="https://wa.me/6281234567890">WhatsApp</a></li><li><a href="https://instagram.com/luminastudio">Instagram</a></li><li><a href="mailto:hello@luminastudio.id">Email</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2024 Lumina Studio. All rights reserved.</p>
+    <p class="footer-copy">Made with passion in Indonesia.</p>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

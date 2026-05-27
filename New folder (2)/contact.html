@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kontak Lumina Studio — Hubungi kami via WhatsApp, Instagram, atau email untuk booking sesi foto profesional." />
+  <title>Contact — Lumina Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .page-hero {
+      height: 45vh; min-height: 300px;
+      display: flex; align-items: flex-end;
+      padding: 5% 5% 4rem;
+      background: var(--black-deep);
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content:''; position:absolute; inset:0;
+      background: url('https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1600&q=60') center/cover;
+      opacity:.1;
+    }
+    .page-hero-content { position:relative; z-index:1; }
+
+    /* Contact page main */
+    .contact-page { padding: 80px 5%; background: var(--black); }
+
+    /* Big booking cards */
+    .booking-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5px;
+      background: var(--dark-2);
+      margin-bottom: 5rem;
+    }
+    .booking-card {
+      background: var(--black);
+      padding: 3rem;
+      text-align: center;
+      transition: background var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .booking-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform var(--transition);
+    }
+    .booking-card:hover { background: var(--dark-1); }
+    .booking-card:hover::before { transform: scaleX(1); }
+
+    .booking-card-icon {
+      width: 64px; height: 64px;
+      margin: 0 auto 1.5rem;
+      border: 1px solid var(--dark-3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color var(--transition-fast);
+    }
+    .booking-card:hover .booking-card-icon { border-color: var(--gold); }
+    .booking-card-icon svg {
+      width: 28px; height: 28px;
+      fill: var(--gold);
+    }
+    .booking-card-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: .5rem;
+    }
+    .booking-card-value {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--silver);
+      margin-bottom: 1.5rem;
+    }
+
+    /* FAQ */
+    .faq-section { padding: 80px 5%; background: var(--black-soft); }
+    .faq-list { max-width: 780px; margin: 3rem auto 0; }
+    .faq-item {
+      border-bottom: 1px solid var(--dark-3);
+      overflow: hidden;
+    }
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 0;
+      cursor: pointer;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--white);
+      transition: color var(--transition-fast);
+      background: transparent;
+      border: none;
+      width: 100%;
+      text-align: left;
+    }
+    .faq-question:hover { color: var(--gold); }
+    .faq-icon {
+      font-size: .8rem;
+      color: var(--gold);
+      transition: transform var(--transition);
+      flex-shrink: 0;
+      margin-left: 1rem;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; }
+    .faq-answer p {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--silver);
+      line-height: 1.8;
+      padding-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-follower"></div>
+<div id="loader"><div class="loader-logo">LUMINA<span>.</span></div><div class="loader-bar-wrap"><div class="loader-bar"></div></div><p class="loader-text">Contact</p></div>
+
+<a id="wa-float" href="https://wa.me/6281234567890" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">LUMINA<span>.</span></a>
+  <ul class="nav-menu">
+    <li><a href="index.html" class="nav-link">Home</a></li>
+    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+    <li><a href="services.html" class="nav-link">Services</a></li>
+    <li><a href="about.html" class="nav-link">About</a></li>
+    <li><a href="contact.html" class="nav-link active nav-cta">Book Session</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-mobile">
+  <a href="index.html" class="nav-link">Home</a>
+  <a href="portfolio.html" class="nav-link">Portfolio</a>
+  <a href="services.html" class="nav-link">Services</a>
+  <a href="about.html" class="nav-link">About</a>
+  <a href="contact.html" class="nav-link">Contact</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <span class="section-eyebrow">Get In Touch</span>
+    <h1 class="section-title">Contact <em>Us</em></h1>
+  </div>
+</div>
+
+<!-- Booking Cards (Quick Contact) -->
+<section class="contact-page">
+  <div class="text-center reveal" style="margin-bottom:3rem;">
+    <span class="section-eyebrow">Reach Out</span>
+    <h2 class="section-title">Book Your <em>Session</em></h2>
+    <div class="section-line" style="margin:1.5rem auto;"></div>
+    <p class="section-desc" style="margin:0 auto;">Pilih cara yang paling nyaman untuk menghubungi kami.</p>
+  </div>
+
+  <div class="booking-cards reveal">
+    <a href="https://wa.me/6281234567890?text=Halo%20Lumina%20Studio%2C%20saya%20ingin%20booking%20sesi%20foto" target="_blank" rel="noopener" class="booking-card">
+      <div class="booking-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </div>
+      <p class="booking-card-title">WhatsApp</p>
+      <p class="booking-card-value">+62 812-3456-7890</p>
+      <span class="btn-outline" style="display:inline-block; font-size:.65rem; padding:.7rem 1.5rem;">Chat Now</span>
+    </a>
+
+    <a href="https://instagram.com/luminastudio" target="_blank" rel="noopener" class="booking-card">
+      <div class="booking-card-icon">
+        <svg viewBox="0 0 24 24" style="fill:none; stroke:var(--gold); stroke-width:1.5;"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="var(--gold)"/></svg>
+      </div>
+      <p class="booking-card-title">Instagram</p>
+      <p class="booking-card-value">@luminastudio</p>
+      <span class="btn-outline" style="display:inline-block; font-size:.65rem; padding:.7rem 1.5rem;">Follow Us</span>
+    </a>
+
+    <a href="https://tiktok.com/@luminastudio" target="_blank" rel="noopener" class="booking-card">
+      <div class="booking-card-icon">
+        <svg viewBox="0 0 24 24" style="fill:var(--gold);"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.15a8.16 8.16 0 004.77 1.52V7.2a4.85 4.85 0 01-1-.51z"/></svg>
+      </div>
+      <p class="booking-card-title">TikTok</p>
+      <p class="booking-card-value">@luminastudio</p>
+      <span class="btn-outline" style="display:inline-block; font-size:.65rem; padding:.7rem 1.5rem;">Watch Reels</span>
+    </a>
+
+    <a href="mailto:hello@luminastudio.id" class="booking-card">
+      <div class="booking-card-icon">
+        <svg viewBox="0 0 24 24" style="fill:none; stroke:var(--gold); stroke-width:1.5;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <p class="booking-card-title">Email</p>
+      <p class="booking-card-value">hello@luminastudio.id</p>
+      <span class="btn-outline" style="display:inline-block; font-size:.65rem; padding:.7rem 1.5rem;">Send Email</span>
+    </a>
+  </div>
+
+  <!-- Contact Info + Map -->
+  <div class="contact-wrap reveal">
+    <div class="contact-info-list">
+      <h3 class="section-title" style="font-size:2rem; margin-bottom:2rem;">Studio <em>Info</em></h3>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <span class="contact-item-label">Studio Location</span>
+          <p class="contact-item-value">Jl. Pemuda No. 88, Surabaya<br>Jawa Timur, Indonesia 60271</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.11h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 5.29 5.29l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/></svg>
+        </div>
+        <div>
+          <span class="contact-item-label">Phone / WhatsApp</span>
+          <a href="https://wa.me/6281234567890" class="contact-item-value">+62 812-3456-7890</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <span class="contact-item-label">Email</span>
+          <a href="mailto:hello@luminastudio.id" class="contact-item-value">hello@luminastudio.id</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <span class="contact-item-label">Studio Hours</span>
+          <p class="contact-item-value">Mon–Sat: 09:00 – 18:00<br>Sunday: By appointment</p>
+        </div>
+      </div>
+
+      <div class="social-links" style="margin-top:2rem;">
+        <a href="https://instagram.com/luminastudio" class="social-link" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5"/></svg>
+        </a>
+        <a href="https://tiktok.com/@luminastudio" class="social-link" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" style="fill:var(--silver); stroke:none;"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.15a8.16 8.16 0 004.77 1.52V7.2a4.85 4.85 0 01-1-.51z"/></svg>
+        </a>
+        <a href="https://wa.me/6281234567890" class="social-link" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" style="fill:var(--silver); stroke:none;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Map -->
+    <div>
+      <span class="map-label">Studio Location — Surabaya</span>
+      <div class="map-wrap">
+        <!-- Replace with your actual Google Maps embed URL -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.3613!2d112.7376!3d-7.2575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMTUnMjcuMCJTIDExMsKwNDQnMTUuNCJF!5e0!3m2!1sen!2sid!4v1234567890"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Lumina Studio Location">
+        </iframe>
+      </div>
+      <div style="margin-top:1.5rem; padding:1.5rem; background:var(--dark-1); border-left:2px solid var(--gold);">
+        <p style="font-family:var(--font-ui); font-size:.65rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:.5rem;">Parking Available</p>
+        <p style="font-family:var(--font-body); font-size:.95rem; color:var(--silver);">Tersedia parkir gratis di depan studio. Landmark: dekat alun-alun kota, gedung berwarna putih.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="text-center reveal">
+    <span class="section-eyebrow">FAQ</span>
+    <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
+  </div>
+  <div class="faq-list reveal">
+    <div class="faq-item">
+      <button class="faq-question">Berapa lama proses editing foto?<span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>Untuk foto wedding, proses editing biasanya memakan waktu 2–3 minggu. Portrait dan event 5–7 hari kerja. Kami selalu berusaha mengirim lebih cepat tanpa mengorbankan kualitas.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Apakah ada biaya DP untuk booking?<span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>Ya, kami membutuhkan DP 30% dari total paket untuk mengamankan tanggal Anda. Pembayaran sisa dilakukan sehari sebelum sesi atau di hari H.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Apakah bisa request konsep foto tertentu?<span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>Tentu! Kami sangat terbuka untuk diskusi konsep. Sebelum sesi, kami akan mengadakan konsultasi khusus untuk memahami visi dan keinginan Anda, termasuk referensi foto, mood, dan lokasi.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Dalam format apa foto dikirim?<span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>File foto dikirim dalam format JPEG resolusi tinggi (min. 4000px) melalui galeri online private. Anda bisa download tanpa batas dan share langsung ke media sosial.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Apakah melayani di luar Surabaya?<span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>Ya! Kami melayani seluruh wilayah Indonesia. Untuk sesi di luar Surabaya, ada biaya tambahan untuk transportasi dan akomodasi yang akan dikomunikasikan di awal.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="cta-section">
+  <span class="cta-eyebrow">Don't Wait</span>
+  <h2 class="cta-title reveal">Booking <em>Sekarang</em></h2>
+  <p class="cta-desc reveal">Tanggal terbaik Anda mungkin sudah dipesan. Amankan sekarang.</p>
+  <div class="cta-btns reveal">
+    <a href="https://wa.me/6281234567890?text=Halo%20Lumina%20Studio%2C%20saya%20ingin%20booking" class="btn-whatsapp" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Booking via WhatsApp
+    </a>
+    <a href="mailto:hello@luminastudio.id" class="btn-outline">Kirim Email</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div><a href="index.html" class="footer-logo">LUMINA<span>.</span></a><p class="footer-tagline">Cinematic photography studio.</p></div>
+    <div><p class="footer-col-title">Pages</p><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><p class="footer-col-title">Services</p><ul class="footer-links"><li><a href="services.html">Wedding</a></li><li><a href="services.html">Prewedding</a></li><li><a href="services.html">Event</a></li><li><a href="services.html">Commercial</a></li></ul></div>
+    <div><p class="footer-col-title">Connect</p><ul class="footer-links"><li><a href="https://wa.me/6281234567890">WhatsApp</a></li><li><a href="https://instagram.com/luminastudio">Instagram</a></li><li><a href="mailto:hello@luminastudio.id">Email</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2024 Lumina Studio. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+<script>
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>

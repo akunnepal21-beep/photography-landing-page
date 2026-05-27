@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tentang Lumina Studio — Fotografer profesional dengan visi sinematik sejak 2018." />
+  <title>About — Lumina Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .page-hero {
+      height: 55vh; min-height: 380px;
+      display: flex; align-items: flex-end;
+      padding: 5% 5% 4rem;
+      background: var(--black-deep);
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content:''; position:absolute; inset:0;
+      background: url('https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1600&q=60') center/cover;
+      opacity:.15;
+    }
+    .page-hero-content { position:relative; z-index:1; }
+
+    /* Philosophy */
+    .philosophy {
+      padding: 80px 5%;
+      background: var(--black-soft);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+    @media(max-width:768px){ .philosophy{ grid-template-columns:1fr; gap:3rem; } }
+
+    .philosophy-quote {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem,3vw,2.2rem);
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--white);
+      position: relative;
+      padding-left: 2rem;
+    }
+    .philosophy-quote::before {
+      content:'';
+      position:absolute; left:0; top:0.3em;
+      width: 3px; height: 80%;
+      background: var(--gold);
+    }
+
+    /* Team */
+    .team-section { padding: 80px 5%; background: var(--black); }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .team-card {
+      background: var(--dark-1);
+      overflow: hidden;
+      transition: transform var(--transition);
+    }
+    .team-card:hover { transform: translateY(-6px); }
+    .team-card img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      filter: grayscale(20%);
+      transition: filter var(--transition);
+    }
+    .team-card:hover img { filter: grayscale(0%); }
+    .team-info { padding: 1.5rem; }
+    .team-name {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: .3rem;
+    }
+    .team-role {
+      font-family: var(--font-ui);
+      font-size: .62rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* Awards */
+    .awards-section { padding: 80px 5%; background: var(--black-soft); }
+    .awards-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .award-item {
+      padding: 2rem;
+      border: 1px solid var(--dark-3);
+      transition: border-color var(--transition-fast);
+    }
+    .award-item:hover { border-color: var(--gold-dim); }
+    .award-year {
+      font-family: var(--font-ui);
+      font-size: .6rem;
+      letter-spacing: .25em;
+      color: var(--gold);
+      display: block;
+      margin-bottom: .5rem;
+    }
+    .award-name {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: .3rem;
+    }
+    .award-org {
+      font-family: var(--font-body);
+      font-size: .9rem;
+      color: var(--silver);
+    }
+  </style>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-follower"></div>
+<div id="loader"><div class="loader-logo">LUMINA<span>.</span></div><div class="loader-bar-wrap"><div class="loader-bar"></div></div><p class="loader-text">About Us</p></div>
+
+<a id="wa-float" href="https://wa.me/6281234567890" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">LUMINA<span>.</span></a>
+  <ul class="nav-menu">
+    <li><a href="index.html" class="nav-link">Home</a></li>
+    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+    <li><a href="services.html" class="nav-link">Services</a></li>
+    <li><a href="about.html" class="nav-link active">About</a></li>
+    <li><a href="contact.html" class="nav-link nav-cta">Book Session</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-mobile">
+  <a href="index.html" class="nav-link">Home</a>
+  <a href="portfolio.html" class="nav-link">Portfolio</a>
+  <a href="services.html" class="nav-link">Services</a>
+  <a href="about.html" class="nav-link">About</a>
+  <a href="contact.html" class="nav-link">Contact</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <span class="section-eyebrow">Our Story</span>
+    <h1 class="section-title">About <em>Lumina</em></h1>
+  </div>
+</div>
+
+<!-- Story + Stats -->
+<section id="about">
+  <div class="about-wrap">
+    <div class="about-img-wrap reveal">
+      <img class="about-img-main"
+           src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=700&q=80"
+           alt="Lumina Studio founder" loading="lazy" />
+      <img class="about-img-accent"
+           src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=400&q=80"
+           alt="Camera" loading="lazy" />
+      <div class="about-badge">Est. 2018</div>
+    </div>
+
+    <div class="about-text">
+      <span class="section-eyebrow reveal">Who We Are</span>
+      <h2 class="section-title reveal">Light &amp; <em>Story</em></h2>
+      <div class="section-line reveal"></div>
+      <p class="section-desc reveal">
+        Lumina Studio lahir dari kecintaan mendalam terhadap cahaya, emosi, dan narasi visual. Sejak 2018, kami telah mendedikasikan setiap karya untuk menceritakan kisah yang sesungguhnya — tanpa dibuat-buat, tanpa rekayasa berlebihan.
+      </p>
+      <p class="section-desc reveal" style="margin-top:1rem;">
+        Filosofi kami sederhana: setiap momen memiliki keindahan intrinsiknya sendiri. Tugas kami adalah menemukan dan mengabadikannya dengan kejujuran artistik yang penuh rasa hormat.
+      </p>
+      <p class="section-desc reveal" style="margin-top:1rem;">
+        Dipimpin oleh Raka Wijaya, fotografer bersertifikat internasional dengan pengalaman di lebih dari 15 kota di Indonesia, tim Lumina hadir dengan pendekatan yang hangat, profesional, dan selalu mengutamakan kenyamanan klien.
+      </p>
+
+      <div class="about-stats reveal">
+        <div class="stat-item">
+          <span class="stat-num" data-count="500" data-suffix="+">0+</span>
+          <span class="stat-label">Happy Clients</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="1200" data-suffix="+">0+</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="6" data-suffix="">0</span>
+          <span class="stat-label">Years</span>
+        </div>
+      </div>
+
+      <div class="equipment-list reveal">
+        <span class="equip-tag">Sony A7 IV</span>
+        <span class="equip-tag">Nikon Z6 III</span>
+        <span class="equip-tag">Canon EOS R5</span>
+        <span class="equip-tag">DJI Ronin 4D</span>
+        <span class="equip-tag">Profoto B10+</span>
+        <span class="equip-tag">DJI Mavic 3 Pro</span>
+        <span class="equip-tag">Sigma Art</span>
+        <span class="equip-tag">Leica M11</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Philosophy -->
+<div class="philosophy">
+  <div class="reveal">
+    <span class="section-eyebrow">Our Vision</span>
+    <h2 class="section-title">The <em>Art</em> of Seeing</h2>
+    <div class="section-line"></div>
+    <p class="section-desc">Kami percaya fotografi bukan sekadar teknis — melainkan tentang kemampuan merasakan dan hadir penuh dalam sebuah momen. Setiap gambar yang kami buat adalah perpaduan antara cahaya, emosi, dan waktu yang tak bisa diulang.</p>
+    <br>
+    <p class="section-desc">Dengan pendekatan sinematik, kami menghadirkan dimensi baru dalam setiap foto — layaknya still frame dari sebuah film yang bermakna.</p>
+  </div>
+  <div class="reveal reveal-delay-2">
+    <p class="philosophy-quote">"Photography is the art of frozen time — the ability to store emotion and feelings within a frame."</p>
+    <br>
+    <p style="font-family:var(--font-ui); font-size:.65rem; letter-spacing:.2em; color:var(--gold); text-transform:uppercase; margin-top:1.5rem;">— Raka Wijaya, Founder</p>
+  </div>
+</div>
+
+<!-- Team -->
+<section class="team-section">
+  <div class="text-center reveal">
+    <span class="section-eyebrow">The Team</span>
+    <h2 class="section-title">Meet Our <em>Creatives</em></h2>
+  </div>
+  <div class="team-grid">
+    <div class="team-card reveal reveal-delay-1">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80" alt="Raka Wijaya" loading="lazy"/>
+      <div class="team-info">
+        <p class="team-name">Raka Wijaya</p>
+        <p class="team-role">Lead Photographer & Founder</p>
+      </div>
+    </div>
+    <div class="team-card reveal reveal-delay-2">
+      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&q=80" alt="Dina Sari" loading="lazy"/>
+      <div class="team-info">
+        <p class="team-name">Dina Sari</p>
+        <p class="team-role">Portrait & Wedding Photographer</p>
+      </div>
+    </div>
+    <div class="team-card reveal reveal-delay-3">
+      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&q=80" alt="Arif Nugroho" loading="lazy"/>
+      <div class="team-info">
+        <p class="team-name">Arif Nugroho</p>
+        <p class="team-role">Cinematographer & Drone Pilot</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Awards -->
+<section class="awards-section">
+  <div class="text-center reveal">
+    <span class="section-eyebrow">Recognition</span>
+    <h2 class="section-title">Awards & <em>Achievements</em></h2>
+  </div>
+  <div class="awards-list">
+    <div class="award-item reveal reveal-delay-1">
+      <span class="award-year">2023</span>
+      <p class="award-name">Best Wedding Photographer</p>
+      <p class="award-org">Indonesia Photography Awards</p>
+    </div>
+    <div class="award-item reveal reveal-delay-2">
+      <span class="award-year">2022</span>
+      <p class="award-name">Top 10 Commercial Studio</p>
+      <p class="award-org">Asia Creative Awards</p>
+    </div>
+    <div class="award-item reveal reveal-delay-3">
+      <span class="award-year">2021</span>
+      <p class="award-name">Cinematic Excellence Award</p>
+      <p class="award-org">Nikon Ambassador Program</p>
+    </div>
+    <div class="award-item reveal reveal-delay-4">
+      <span class="award-year">2020</span>
+      <p class="award-name">Best Portrait Series</p>
+      <p class="award-org">Sony Alpha Creator</p>
+    </div>
+  </div>
+</section>
+
+<section id="cta-section">
+  <span class="cta-eyebrow">Let's Work Together</span>
+  <h2 class="cta-title reveal">Start Your <em>Story</em></h2>
+  <p class="cta-desc reveal">Hubungi kami dan mari ciptakan karya visual yang tak terlupakan.</p>
+  <div class="cta-btns reveal">
+    <a href="https://wa.me/6281234567890" class="btn-whatsapp" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Chat Sekarang
+    </a>
+    <a href="contact.html" class="btn-outline">Lihat Kontak</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div><a href="index.html" class="footer-logo">LUMINA<span>.</span></a><p class="footer-tagline">Cinematic photography studio.</p></div>
+    <div><p class="footer-col-title">Pages</p><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><p class="footer-col-title">Services</p><ul class="footer-links"><li><a href="services.html">Wedding</a></li><li><a href="services.html">Prewedding</a></li><li><a href="services.html">Event</a></li><li><a href="services.html">Commercial</a></li></ul></div>
+    <div><p class="footer-col-title">Connect</p><ul class="footer-links"><li><a href="https://wa.me/6281234567890">WhatsApp</a></li><li><a href="https://instagram.com/luminastudio">Instagram</a></li><li><a href="mailto:hello@luminastudio.id">Email</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2024 Lumina Studio. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
